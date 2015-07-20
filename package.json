@@ -2,7 +2,7 @@
   "name": "create-github-repo",
   "main": "./lib/create-github-repo",
   "version": "0.0.0",
-  "description": "A short description of your package",
+  "description": "Quickly create a Github repo for a project using package.json",
   "keywords": [],
   "repository": "https://github.com/raymond-h/create-github-repo",
   "license": "MIT",
