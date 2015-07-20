@@ -47,22 +47,23 @@ module.exports =
 
         .then ([res]) =>
             atom.notifications.addInfo "
-                Created GitHub repo #{res.owner.login}/#{res.name}
+                Created GitHub repo `#{res.owner.login}/#{res.name}`
             ", {
-                detail: "URL: #{res.http_url}"
+                detail: "#{res.html_url}"
             }
 
-            .then => @git 'remote', 'add', 'origin', res.git_url
+            @git 'remote', 'add', 'origin', res.clone_url
             .then => @git 'push', 'origin', 'master'
 
             .then ([stdout]) =>
                 atom.notifications.addSuccess "
-                    Pushed `master` to repo #{res.owner.login}/#{res.name}
+                    Pushed `master` to repo `#{res.owner.login}/#{res.name}`
                 ", {
                     detail: stdout
                 }
 
         .catch (err) ->
+            console.error err.stack
             atom.notifications.addError err.name,
                 detail: err.message
                 stack: err.stack
