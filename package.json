@@ -1,0 +1,16 @@
+{
+  "name": "create-github-repo",
+  "main": "./lib/create-github-repo",
+  "version": "0.0.0",
+  "description": "A short description of your package",
+  "keywords": [],
+  "repository": "https://github.com/raymond-h/create-github-repo",
+  "license": "MIT",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  },
+  "dependencies": {
+    "github-api": "^0.10.6",
+    "q": "^1.4.1"
+  }
+}
