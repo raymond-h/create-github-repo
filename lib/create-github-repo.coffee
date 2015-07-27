@@ -1,5 +1,6 @@
 {CompositeDisposable} = require 'atom'
 {exec} = require 'child_process'
+fs = require 'fs'
 
 Github = require 'github-api'
 Q = require 'q'
@@ -34,9 +35,9 @@ module.exports =
 		@user = github.getUser()
 
 	createRepository: ->
-		packageJson = @findPackageJson()
+		@git 'init'
 
-		packageJson.read()
+		.then => @findPackageJson().read()
 
 		.then (str) -> JSON.parse str
 
