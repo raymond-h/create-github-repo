@@ -78,4 +78,4 @@ module.exports =
 	git: (params...) ->
 		Q.nfcall exec,
 			"git #{params.map((p) -> '"' + p + '"').join ' '}",
-			cwd: atom.project.getRepositories()[0].getWorkingDirectory()
+			cwd: atom.project.getDirectories()[0].getPath()
