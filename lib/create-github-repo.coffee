@@ -54,7 +54,7 @@ module.exports =
 			}
 
 			@git 'remote', 'add', 'origin', res.clone_url
-			.then => @git 'push', 'origin', 'master'
+			.then => @git 'push', '--set-upstream', 'origin', 'master'
 
 			.then ([stdout]) ->
 				atom.notifications.addSuccess "
