@@ -1,7 +1,7 @@
 {
   "name": "create-github-repo",
   "main": "./lib/create-github-repo",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Quickly create a Github repo for a project using package.json",
   "keywords": [],
   "repository": "https://github.com/raymond-h/create-github-repo",
